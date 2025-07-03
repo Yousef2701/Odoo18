@@ -1,0 +1,22 @@
+<odoo>
+    <menuitem
+        id= "smart_subscription_root_menu"
+        name= "Smart Subscription"
+    />
+    
+    <menuitem
+        id= "subscription_plan_menu"
+        name= "Subscription Plan"
+        parent= "smart_subscription_root_menu"
+    />
+    <menuitem
+        id= "plan_feature_menu"
+        name= "Plan Feature"
+        parent= "smart_subscription_root_menu"
+    />
+    <menuitem
+        id= "customer_subscription_menu"
+        name= "Customer Subscription"
+        parent= "smart_subscription_root_menu"
+    />
+</odoo>

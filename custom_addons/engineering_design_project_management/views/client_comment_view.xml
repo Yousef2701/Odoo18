@@ -1,0 +1,34 @@
+<odoo>
+    <record id="view_client_comment_tree" model="ir.ui.view">
+        <field name="name">client comment tree</field>
+        <field name="model">eng.client.comment</field>
+        <field name="arch" type="xml">
+            <list multi_edit="1">
+                <field name="partner_id"/>
+                <field name="version_id"/>
+                <field name="comment"/>
+                <field name="date"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_client_comment_form" model="ir.ui.view">
+        <field name="name">client comment form</field>
+        <field name="model">eng.client.comment</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="partner_id"/>
+                    <field name="version_id"/>
+                    <field name="comment"/>
+                    <field name="date"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_eng_client_comment" model="ir.actions.act_window">
+        <field name="name">Client Comments</field>
+        <field name="res_model">eng.client.comment</field>
+    </record>
+</odoo>
