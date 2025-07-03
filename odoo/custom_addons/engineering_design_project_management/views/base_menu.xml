@@ -1,0 +1,49 @@
+<odoo>
+    <menuitem 
+        id="engineering_root_menu" 
+        name="Engineering Design" 
+    />
+
+    <menuitem 
+        id="engineering_projects_menu" 
+        name="Projects" 
+        parent="engineering_root_menu" 
+        action="action_eng_engineering_project"
+    />
+    <menuitem
+        id="design_briefs_menu" 
+        name="Design Briefs" 
+        parent="engineering_root_menu" 
+        action="action_eng_design_brief"
+    />
+    <menuitem 
+        id="design_versions_menu" 
+        name="Versions" 
+        parent="engineering_root_menu" 
+        action="action_eng_design_version"
+    />
+    <menuitem 
+        id="project_tasks_menu" 
+        name="Tasks" 
+        parent="engineering_root_menu" 
+        action="action_eng_project_task"
+    />
+    <menuitem 
+        id="design_files_menu" 
+        name="Files" 
+        parent="engineering_root_menu" 
+        action="action_eng_design_file"
+    />
+    <menuitem 
+        id="client_comments_menu" 
+        name="Client Comments" 
+        parent="engineering_root_menu" 
+        action="action_eng_client_comment"
+    />
+    <menuitem 
+        id="project_feedback_menu" 
+        name="Feedback" 
+        parent="engineering_root_menu" 
+        action="action_eng_project_feedback"
+    />
+</odoo>

@@ -1,4 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_subscription_plan_user,easy_subscription_subscription_plan_user,model_smart_subscription_plan,,1,1,1,1
-access_plan_feature_user,easy_subscription_plan_feature_user,model_smart_subscription_plan_feature,,1,1,1,1
-access_customer_subscription_user,easy_subscription_customer_subscription_user,model_smart_customer_subscription,,1,1,1,1

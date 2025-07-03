@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_engineering_project,access_engineering_project,model_eng_engineering_project,,1,1,1,1
+access_design_brief,access_design_brief,model_eng_design_brief,,1,1,1,1
+access_design_version,access_design_version,model_eng_design_version,,1,1,1,1
+access_project_task,access_project_task,model_eng_project_task,,1,1,1,1
+access_design_file,access_design_file,model_eng_design_file,,1,1,1,1
+access_client_comment,access_client_comment,model_eng_client_comment,,1,1,1,1
+access_project_feedback,access_project_feedback,model_eng_project_feedback,,1,1,1,1
