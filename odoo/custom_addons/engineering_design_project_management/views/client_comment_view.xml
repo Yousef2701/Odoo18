@@ -27,8 +27,21 @@
         </field>
     </record>
 
+    <record id= "view_client_comment_search" model= "ir.ui.view">
+        <field name= "name">client comment search</field>
+        <field name= "model">eng.client.comment</field>
+        <field name= "arch" type= "xml">
+            <search>
+
+               <filter name="group_version" string="Version" context="{'group_by': 'version_id'}" />
+               <filter name="group_clint" string="Clint" context="{'group_by': 'partner_id'}" />
+            </search>
+        </field>
+    </record>
+
     <record id="action_eng_client_comment" model="ir.actions.act_window">
         <field name="name">Client Comments</field>
         <field name="res_model">eng.client.comment</field>
+        <field name="view_mode">list,form,search</field>
     </record>
 </odoo>

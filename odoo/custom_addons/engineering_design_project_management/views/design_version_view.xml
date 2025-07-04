@@ -31,8 +31,28 @@
         </field>
     </record>
 
+    <record id= "view_design_version_search" model= "ir.ui.view">
+        <field name= "name">design version search</field>
+        <field name= "model">eng.design.version</field>
+        <field name= "arch" type= "xml">
+            <search>
+               <field name= "name" />
+               <field name= "project_id" />
+
+               <filter name="is_draft" string="Draft Versions" domain="[('status', '=', 'draft')]" />
+               <filter name="is_submitted" string="Submitted to Client Versions" domain="[('status', '=', 'submitted')]" />
+               <filter name="is_approved" string="Approved Versions" domain="[('status', '=', 'approved')]" />
+               <filter name="is_revision" string="Needs Revision Versions" domain="[('status', '=', 'revision')]" />
+
+               <filter name="group_status" string="Status" context="{'group_by': 'status'}" />
+               <filter name="group_project" string="Project" context="{'group_by': 'project_id'}" />
+            </search>
+        </field>
+    </record>
+
     <record id="action_eng_design_version" model="ir.actions.act_window">
         <field name="name">Design Versions</field>
         <field name="res_model">eng.design.version</field>
+        <field name="view_mode">list,form,search</field>
     </record>
 </odoo>

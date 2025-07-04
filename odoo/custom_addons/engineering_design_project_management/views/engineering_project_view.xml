@@ -51,8 +51,62 @@
         </field>
     </record>
 
+    <record id= "view_engineering_project_search" model= "ir.ui.view">
+        <field name= "name">engineering project search</field>
+        <field name= "model">eng.engineering.project</field>
+        <field name= "arch" type= "xml">
+            <search>
+               <field name= "name" />
+               <field name= "client_id" />
+
+               <filter name="is_new" string="New Projects" domain="[('stage', '=', 'new')]" />
+               <filter name="is_analysis" string="Requirements Analysis Projects" domain="[('stage', '=', 'analysis')]" />
+               <filter name="is_design" string="Design Phase Projects" domain="[('stage', '=', 'design')]" />
+               <filter name="is_review" string="Client Review Projects" domain="[('stage', '=', 'review')]" />
+               <filter name="is_revisions" string="Revisions Projects" domain="[('stage', '=', 'revisions')]" />
+               <filter name="is_approved" string="Approved Projects" domain="[('stage', '=', 'approved')]" />
+               <filter name="is_delivered" string="Delivered Projects" domain="[('stage', '=', 'delivered')]" />
+
+               <filter name="group_stage" string="Stage" context="{'group_by': 'stage'}" />
+               <filter name="group_client" string="Client" context="{'group_by': 'client_id'}" />
+            </search>
+        </field>
+    </record>
+
+    <record id="view_engineering_project_calendar" model="ir.ui.view">
+        <field name="name">engineering project calendar</field>
+        <field name="model">eng.engineering.project</field>
+        <field name="arch" type="xml">
+            <calendar string="Project Deadlines" date_stop="end_date" date_start="start_date" color="stage">
+                <field name="name"/>
+            </calendar>
+        </field>
+    </record>
+
+    <record id="view_engineering_project_kanban" model="ir.ui.view">
+        <field name="name">engineering project kanban</field>
+        <field name="model">eng.engineering.project</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_small_column">
+                <field name="stage"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click">
+                            <strong><field name="name"/></strong><br/>
+                            <field name="client_id"/>
+                            <div>Ends: <field name="end_date"/></div>
+                            <div><field name="description"/></div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+
     <record id="action_eng_engineering_project" model="ir.actions.act_window">
         <field name="name">Projects</field>
         <field name="res_model">eng.engineering.project</field>
+        <field name="view_mode">list,form,search,calendar,kanban</field>
     </record>
 </odoo>

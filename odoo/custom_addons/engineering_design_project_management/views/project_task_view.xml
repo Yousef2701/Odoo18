@@ -30,8 +30,25 @@
         </field>
     </record>
 
+    <record id= "view_project_task_search" model= "ir.ui.view">
+        <field name= "name">project task search</field>
+        <field name= "model">eng.project.task</field>
+        <field name= "arch" type= "xml">
+            <search>
+               <field name= "name" />
+
+               <filter name="is_todo" string="To Do Tasks" domain="[('state', '=', 'todo')]" />
+               <filter name="is_in_progress" string="In Progress Tasks" domain="[('state', '=', 'in_progress')]" />
+               <filter name="is_done" string="Done Tasks" domain="[('state', '=', 'done')]" />
+
+               <filter name="group_project" string="Project" context="{'group_by': 'project_id'}" />
+            </search>
+        </field>
+    </record>
+
     <record id="action_eng_project_task" model="ir.actions.act_window">
         <field name="name">Tasks</field>
         <field name="res_model">eng.project.task</field>
+        <field name="view_mode">list,form,search</field>
     </record>
 </odoo>

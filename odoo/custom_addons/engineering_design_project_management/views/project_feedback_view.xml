@@ -28,8 +28,27 @@
         </field>
     </record>
 
+    <record id= "view_project_feedback_search" model= "ir.ui.view">
+        <field name= "name">project feedback search</field>
+        <field name= "model">eng.project.feedback</field>
+        <field name= "arch" type= "xml">
+            <search>
+
+               <filter name="is_very_poor" string="Rating is Very Poor" domain="[('rating', '=', '1')]" />
+               <filter name="is_poor" string="Rating is Poor" domain="[('rating', '=', '2')]" />
+               <filter name="is_average" string="Rating is Average" domain="[('rating', '=', '3')]" />
+               <filter name="is_good" string="Rating is Good" domain="[('rating', '=', '4')]" />
+               <filter name="is_excellent" string="Rating is Excellent" domain="[('rating', '=', '5')]" />
+
+               <filter name="group_project" string="Project" context="{'group_by': 'project_id'}" />
+               <filter name="group_client" string="Client" context="{'group_by': 'partner_id'}" />
+            </search>
+        </field>
+    </record>
+
     <record id="action_eng_project_feedback" model="ir.actions.act_window">
         <field name="name">Feedback</field>
         <field name="res_model">eng.project.feedback</field>
+        <field name="view_mode">list,form,search</field>
     </record>
 </odoo>

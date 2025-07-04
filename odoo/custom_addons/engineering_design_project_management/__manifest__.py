@@ -29,14 +29,14 @@
 
     'data': [
        'security/ir.model.access.csv',
-        'views/base_menu.xml',
         'views/engineering_project_view.xml',
         'views/design_brief_view.xml',
         'views/design_version_view.xml',
         'views/project_task_view.xml',
         'views/design_file_view.xml',
         'views/client_comment_view.xml',
-        'views/project_feedback_view.xml'
+        'views/project_feedback_view.xml',
+        'views/base_menu.xml'
     ],
 
     'demo': [

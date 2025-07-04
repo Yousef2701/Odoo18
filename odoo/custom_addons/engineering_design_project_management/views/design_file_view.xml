@@ -29,8 +29,23 @@
         </field>
     </record>
 
+    <record id= "view_design_file_search" model= "ir.ui.view">
+        <field name= "name">design file search</field>
+        <field name= "model">eng.design.file</field>
+        <field name= "arch" type= "xml">
+            <search>
+               <field name= "name" />
+
+               <filter name="group_project" string="Project" context="{'group_by': 'project_id'}" />
+               <filter name="group_version" string="Version" context="{'group_by': 'version_id'}" />
+               <filter name="group_uploaded" string="Uploaded By" context="{'group_by': 'uploaded_by'}" />
+            </search>
+        </field>
+    </record>
+
     <record id="action_eng_design_file" model="ir.actions.act_window">
         <field name="name">Files</field>
         <field name="res_model">eng.design.file</field>
+        <field name="view_mode">list,form,search</field>
     </record>
 </odoo>

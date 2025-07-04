@@ -33,8 +33,27 @@
         </field>
     </record>
 
+    <record id= "view_design_brief_search" model= "ir.ui.view">
+        <field name= "name">design brief search</field>
+        <field name= "model">eng.design.brief</field>
+        <field name= "arch" type= "xml">
+            <search>
+               <field name= "name" />
+
+               <filter name="is_architectural" string="Architectural Projects" domain="[('project_type', '=', 'architectural')]" />
+               <filter name="is_mechanical" string="Mechanical Projects" domain="[('project_type', '=', 'mechanical')]" />
+               <filter name="is_electrical" string="Electrical Projects" domain="[('project_type', '=', 'electrical')]" />
+               <filter name="is_civil" string="Civil Projects" domain="[('project_type', '=', 'civil')]" />
+
+               <filter name="group_clint" string="Clint" context="{'group_by': 'client_id'}" />
+               <filter name="group_project" string="Project" context="{'group_by': 'project_id'}" />
+            </search>
+        </field>
+    </record>
+
     <record id="action_eng_design_brief" model="ir.actions.act_window">
         <field name="name">Design Briefs</field>
         <field name="res_model">eng.design.brief</field>
+        <field name="view_mode">list,form,search</field>
     </record>
 </odoo>
