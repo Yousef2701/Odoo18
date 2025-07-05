@@ -1,22 +1,32 @@
 <odoo>
-    <menuitem
-        id= "smart_subscription_root_menu"
-        name= "Smart Subscription"
-    />
-    
-    <menuitem
-        id= "subscription_plan_menu"
-        name= "Subscription Plan"
-        parent= "smart_subscription_root_menu"
-    />
-    <menuitem
-        id= "plan_feature_menu"
-        name= "Plan Feature"
-        parent= "smart_subscription_root_menu"
-    />
-    <menuitem
-        id= "customer_subscription_menu"
-        name= "Customer Subscription"
-        parent= "smart_subscription_root_menu"
-    />
+    <!-- 🔹 Root Menu -->
+    <menuitem id="menu_smart_subscription_root"
+              name="Smart Subscription"/>
+
+    <!-- 🔸 Plans & Features -->
+    <menuitem id="menu_subscription_plan_main"
+              name="Plans"
+              parent="menu_smart_subscription_root"/>
+
+    <menuitem id="menu_plan_feature"
+              name="Features"
+              parent="menu_subscription_plan_main"
+              action="action_plan_feature"/>
+
+    <menuitem id="menu_subscription_plan"
+              name="Subscription Plans"
+              parent="menu_subscription_plan_main"
+              action="action_subscription_plan"/>
+
+    <!-- 🔸 Contracts -->
+    <menuitem id="menu_subscription_contract"
+              name="Contracts"
+              parent="menu_smart_subscription_root"
+              action="action_subscription_contract"/>
+
+    <!-- 🔸 Renewals -->
+    <menuitem id="menu_subscription_renewal_log"
+              name="Renewal Logs"
+              parent="menu_smart_subscription_root"
+              action="action_subscription_renewal_log"/>
 </odoo>

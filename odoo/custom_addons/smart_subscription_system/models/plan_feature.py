@@ -1,11 +1,14 @@
 from odoo import models, fields
 
-class SubscriptionPlanFeature(models.Model):
-    _name = 'smart.subscription.plan.feature'
+class PlanFeature(models.Model):
+    _name = 'plan.feature'
     _description = 'Plan Feature'
 
-    name = fields.Char(required=True)
-    plan_id = fields.Many2one('smart.subscription.plan', required=True, ondelete='cascade')
+    name = fields.Char(string='Feature Name', required=True)
+    description = fields.Text(string='Description')
+
+    plan_ids = fields.Many2many('subscription.plan', string='Plans')
+
 
 
     # override create method

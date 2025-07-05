@@ -1,28 +1,24 @@
-from odoo import models, fields, api
+from odoo import models, fields
 
 class SubscriptionPlan(models.Model):
-    _name = 'smart.subscription.plan'
+    _name = 'subscription.plan'
     _description = 'Subscription Plan'
 
-    name = fields.Char(required=True, size= 45)
-    price = fields.Float(required=True)
-    duration = fields.Selection([
-        ('monthly', 'Monthly'),
-        ('yearly', 'Yearly')
-    ], required=True, default='yearly')
-    description = fields.Text(size= 450)
-    feature_ids = fields.One2many('smart.subscription.plan.feature', 'plan_id', string='Features')
-    active = fields.Boolean(default=True)
+    name = fields.Char(string='Plan Name', required=True)
+    price = fields.Float(string='Price', required=True)
+    duration_months = fields.Integer(string='Duration (Months)', required=True)
+    
+    feature_ids = fields.Many2many(
+        'plan.feature', 
+        string='Features'
+    )
 
-    _sql_constraints = [
-        ('unique_name', 'unique("name")', 'This Name Is Exist!')
-    ]
+    contract_ids = fields.One2many(
+        'subscription.contract', 
+        'plan_id', 
+        string='Contracts'
+    )
 
-    @api.constrains('price')
-    def _check_price_greater_50(self):
-        for rec in self:
-            if rec.price <= 50:
-                raise ValidationError('Please Make Sure The Price Is Greater Than 50')
 
 
     # override create method

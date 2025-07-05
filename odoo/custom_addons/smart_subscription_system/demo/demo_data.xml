@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+     <!-- Plan Features -->
+    <record id="feature_1" model="plan.feature">
+        <field name="name">24/7 Support</field>
+        <field name="description">Round-the-clock customer support</field>
+    </record>
+    
+    <record id="feature_2" model="plan.feature">
+        <field name="name">API Access</field>
+        <field name="description">Full access to our REST API</field>
+    </record>
+    
+    <record id="feature_3" model="plan.feature">
+        <field name="name">Advanced Analytics</field>
+        <field name="description">Detailed usage analytics dashboard</field>
+    </record>
+    
+    <record id="feature_4" model="plan.feature">
+        <field name="name">Multi-user</field>
+        <field name="description">Support for multiple user accounts</field>
+    </record>
+    
+    <record id="feature_5" model="plan.feature">
+        <field name="name">Data Export</field>
+        <field name="description">Export your data in multiple formats</field>
+    </record>
+    
+    <record id="feature_6" model="plan.feature">
+        <field name="name">Custom Branding</field>
+        <field name="description">Add your company logo and colors</field>
+    </record>
+    
+    <record id="feature_7" model="plan.feature">
+        <field name="name">Priority Support</field>
+        <field name="description">Jump to the front of the support queue</field>
+    </record>
+    
+    <record id="feature_8" model="plan.feature">
+        <field name="name">SSO Integration</field>
+        <field name="description">Single Sign-On with your identity provider</field>
+    </record>
+    
+    <record id="feature_9" model="plan.feature">
+        <field name="name">Webhooks</field>
+        <field name="description">Configure custom webhook notifications</field>
+    </record>
+    
+    <record id="feature_10" model="plan.feature">
+        <field name="name">Custom Reports</field>
+        <field name="description">Create and save custom reports</field>
+    </record>
+    
+    <record id="feature_11" model="plan.feature">
+        <field name="name">Mobile App</field>
+        <field name="description">Access via our mobile application</field>
+    </record>
+    
+    <record id="feature_12" model="plan.feature">
+        <field name="name">Data Backup</field>
+        <field name="description">Daily automated data backups</field>
+    </record>
+    
+    <record id="feature_13" model="plan.feature">
+        <field name="name">Unlimited Storage</field>
+        <field name="description">No limits on data storage</field>
+    </record>
+    
+    <record id="feature_14" model="plan.feature">
+        <field name="name">Training Sessions</field>
+        <field name="description">Monthly training webinars</field>
+    </record>
+    
+    <record id="feature_15" model="plan.feature">
+        <field name="name">Dedicated Account Manager</field>
+        <field name="description">Personalized account management</field>
+    </record>
+
+        <!-- Subscription Plans -->
+    <record id="plan_basic" model="subscription.plan">
+        <field name="name">Basic Plan</field>
+        <field name="price">9.99</field>
+        <field name="duration_months">1</field>
+        <field name="feature_ids" eval="[(6, 0, [ref('feature_1'), ref('feature_2'), ref('feature_5')])]"/>
+    </record>
+    
+    <record id="plan_standard" model="subscription.plan">
+        <field name="name">Standard Plan</field>
+        <field name="price">29.99</field>
+        <field name="duration_months">3</field>
+        <field name="feature_ids" eval="[(6, 0, [ref('feature_1'), ref('feature_2'), ref('feature_3'), ref('feature_5'), ref('feature_6')])]"/>
+    </record>
+    
+    <record id="plan_pro" model="subscription.plan">
+        <field name="name">Professional Plan</field>
+        <field name="price">59.99</field>
+        <field name="duration_months">6</field>
+        <field name="feature_ids" eval="[(6, 0, [ref('feature_1'), ref('feature_2'), ref('feature_3'), ref('feature_4'), ref('feature_5'), ref('feature_6'), ref('feature_7')])]"/>
+    </record>
+    
+    <record id="plan_enterprise" model="subscription.plan">
+        <field name="name">Enterprise Plan</field>
+        <field name="price">99.99</field>
+        <field name="duration_months">12</field>
+        <field name="feature_ids" eval="[(6, 0, [ref('feature_1'), ref('feature_2'), ref('feature_3'), ref('feature_4'), ref('feature_5'), ref('feature_6'), ref('feature_7'), ref('feature_8'), ref('feature_9')])]"/>
+    </record>
+    
+    <record id="plan_monthly" model="subscription.plan">
+        <field name="name">Monthly Starter</field>
+        <field name="price">14.99</field>
+        <field name="duration_months">1</field>
+        <field name="feature_ids" eval="[(6, 0, [ref('feature_1'), ref('feature_2')])]"/>
+    </record>
+    
+    <record id="plan_quarterly" model="subscription.plan">
+        <field name="name">Quarterly Saver</field>
+        <field name="price">39.99</field>
+        <field name="duration_months">3</field>
+        <field name="feature_ids" eval="[(6, 0, [ref('feature_1'), ref('feature_2'), ref('feature_3'), ref('feature_5')])]"/>
+    </record>
+    
+    <record id="plan_annual" model="subscription.plan">
+        <field name="name">Annual Pro</field>
+        <field name="price">89.99</field>
+        <field name="duration_months">12</field>
+        <field name="feature_ids" eval="[(6, 0, [ref('feature_1'), ref('feature_2'), ref('feature_3'), ref('feature_4'), ref('feature_5'), ref('feature_6')])]"/>
+    </record>
+    
+    <record id="plan_business" model="subscription.plan">
+        <field name="name">Business Plan</field>
+        <field name="price">149.99</field>
+        <field name="duration_months">12</field>
+        <field name="feature_ids" eval="[(6, 0, [ref('feature_1'), ref('feature_2'), ref('feature_3'), ref('feature_4'), ref('feature_5'), ref('feature_6'), ref('feature_7'), ref('feature_8')])]"/>
+    </record>
+    
+    <record id="plan_team" model="subscription.plan">
+        <field name="name">Team Plan</field>
+        <field name="price">79.99</field>
+        <field name="duration_months">6</field>
+        <field name="feature_ids" eval="[(6, 0, [ref('feature_1'), ref('feature_2'), ref('feature_3'), ref('feature_4'), ref('feature_5')])]"/>
+    </record>
+    
+    <record id="plan_student" model="subscription.plan">
+        <field name="name">Student Plan</field>
+        <field name="price">4.99</field>
+        <field name="duration_months">1</field>
+        <field name="feature_ids" eval="[(6, 0, [ref('feature_1'), ref('feature_2')])]"/>
+    </record>
+    
+    <record id="plan_nonprofit" model="subscription.plan">
+        <field name="name">Non-Profit Plan</field>
+        <field name="price">19.99</field>
+        <field name="duration_months">6</field>
+        <field name="feature_ids" eval="[(6, 0, [ref('feature_1'), ref('feature_2'), ref('feature_3'), ref('feature_5')])]"/>
+    </record>
+    
+    <record id="plan_trial" model="subscription.plan">
+        <field name="name">Free Trial</field>
+        <field name="price">0.00</field>
+        <field name="duration_months">1</field>
+        <field name="feature_ids" eval="[(6, 0, [ref('feature_1'), ref('feature_2')])]"/>
+    </record>
+    
+    <record id="plan_custom1" model="subscription.plan">
+        <field name="name">Custom Plan A</field>
+        <field name="price">49.99</field>
+        <field name="duration_months">3</field>
+        <field name="feature_ids" eval="[(6, 0, [ref('feature_3'), ref('feature_4'), ref('feature_7')])]"/>
+    </record>
+    
+    <record id="plan_custom2" model="subscription.plan">
+        <field name="name">Custom Plan B</field>
+        <field name="price">119.99</field>
+        <field name="duration_months">12</field>
+        <field name="feature_ids" eval="[(6, 0, [ref('feature_8'), ref('feature_9'), ref('feature_10'), ref('feature_11')])]"/>
+    </record>
+    
+    <record id="plan_custom3" model="subscription.plan">
+        <field name="name">Custom Plan C</field>
+        <field name="price">199.99</field>
+        <field name="duration_months">12</field>
+        <field name="feature_ids" eval="[(6, 0, [ref('feature_12'), ref('feature_13'), ref('feature_14'), ref('feature_15')])]"/>
+    </record>
+
+        <!-- Subscription Contracts -->
+    <record id="contract_1" model="subscription.contract">
+        <field name="name">CNT-0001</field>
+        <field name="partner_id" ref="base.res_partner_1"/>  <!-- Demo Customer 1 -->
+        <field name="plan_id" ref="plan_basic"/>
+        <field name="start_date">2023-01-01</field>
+        <field name="state">active</field>
+    </record>
+    
+    <record id="contract_2" model="subscription.contract">
+        <field name="name">CNT-0002</field>
+        <field name="partner_id" ref="base.res_partner_2"/>  <!-- Demo Customer 2 -->
+        <field name="plan_id" ref="plan_standard"/>
+        <field name="start_date">2023-02-15</field>
+        <field name="state">active</field>
+    </record>
+    
+    <record id="contract_3" model="subscription.contract">
+        <field name="name">CNT-0003</field>
+        <field name="partner_id" ref="base.res_partner_3"/>  <!-- Demo Customer 3 -->
+        <field name="plan_id" ref="plan_pro"/>
+        <field name="start_date">2023-03-10</field>
+        <field name="state">expired</field>
+    </record>
+    
+    <record id="contract_4" model="subscription.contract">
+        <field name="name">CNT-0004</field>
+        <field name="partner_id" ref="base.res_partner_4"/>  <!-- Demo Customer 4 -->
+        <field name="plan_id" ref="plan_enterprise"/>
+        <field name="start_date">2023-04-05</field>
+        <field name="state">active</field>
+    </record>
+    
+    <record id="contract_5" model="subscription.contract">
+        <field name="name">CNT-0005</field>
+        <field name="partner_id" ref="base.res_partner_5"/>  <!-- Demo Customer 5 -->
+        <field name="plan_id" ref="plan_monthly"/>
+        <field name="start_date">2023-05-20</field>
+        <field name="state">cancelled</field>
+    </record>
+    
+    <record id="contract_6" model="subscription.contract">
+        <field name="name">CNT-0006</field>
+        <field name="partner_id" ref="base.res_partner_10"/>  <!-- Demo Customer 10 -->
+        <field name="plan_id" ref="plan_quarterly"/>
+        <field name="start_date">2023-06-01</field>
+        <field name="state">active</field>
+    </record>
+    
+    <record id="contract_7" model="subscription.contract">
+        <field name="name">CNT-0007</field>
+        <field name="partner_id" ref="base.res_partner_12"/>  <!-- Demo Customer 12 -->
+        <field name="plan_id" ref="plan_annual"/>
+        <field name="start_date">2023-07-15</field>
+        <field name="state">draft</field>
+    </record>
+    
+    <record id="contract_8" model="subscription.contract">
+        <field name="name">CNT-0008</field>
+        <field name="partner_id" ref="base.res_partner_8"/>  <!-- Demo Customer 8 -->
+        <field name="plan_id" ref="plan_business"/>
+        <field name="start_date">2023-08-10</field>
+        <field name="state">active</field>
+    </record>
+    
+    <record id="contract_9" model="subscription.contract">
+        <field name="name">CNT-0009</field>
+        <field name="partner_id" ref="base.res_partner_9"/>  <!-- Demo Customer 9 -->
+        <field name="plan_id" ref="plan_team"/>
+        <field name="start_date">2023-09-01</field>
+        <field name="state">expired</field>
+    </record>
+    
+    <record id="contract_10" model="subscription.contract">
+        <field name="name">CNT-0010</field>
+        <field name="partner_id" ref="base.res_partner_11"/>  <!-- Demo Customer 11 -->
+        <field name="plan_id" ref="plan_student"/>
+        <field name="start_date">2023-10-05</field>
+        <field name="state">active</field>
+    </record>
+    
+    <record id="contract_11" model="subscription.contract">
+        <field name="name">CNT-0011</field>
+        <field name="partner_id" ref="base.res_partner_13"/>  <!-- Demo Customer 13 -->
+        <field name="plan_id" ref="plan_nonprofit"/>
+        <field name="start_date">2023-11-20</field>
+        <field name="state">active</field>
+    </record>
+    
+    <record id="contract_12" model="subscription.contract">
+        <field name="name">CNT-0012</field>
+        <field name="partner_id" ref="base.res_partner_14"/>  <!-- Demo Customer 14 -->
+        <field name="plan_id" ref="plan_trial"/>
+        <field name="start_date">2023-12-01</field>
+        <field name="state">expired</field>
+    </record>
+    
+    <record id="contract_13" model="subscription.contract">
+        <field name="name">CNT-0013</field>
+        <field name="partner_id" ref="base.res_partner_15"/>  <!-- Demo Customer 15 -->
+        <field name="plan_id" ref="plan_custom1"/>
+        <field name="start_date">2024-01-15</field>
+        <field name="state">active</field>
+    </record>
+    
+    <record id="contract_14" model="subscription.contract">
+        <field name="name">CNT-0014</field>
+        <field name="partner_id" ref="base.res_partner_16"/>  <!-- Demo Customer 16 -->
+        <field name="plan_id" ref="plan_custom2"/>
+        <field name="start_date">2024-02-10</field>
+        <field name="state">cancelled</field>
+    </record>
+    
+    <record id="contract_15" model="subscription.contract">
+        <field name="name">CNT-0015</field>
+        <field name="partner_id" ref="base.res_partner_17"/>  <!-- Demo Customer 17 -->
+        <field name="plan_id" ref="plan_custom3"/>
+        <field name="start_date">2024-03-05</field>
+        <field name="state">draft</field>
+    </record>
+
+        <!-- Renewal Logs -->
+    <record id="renewal_1" model="subscription.renewal.log">
+        <field name="contract_id" ref="contract_1"/>
+        <field name="renewal_date">2023-02-01</field>
+        <field name="status">success</field>
+        <field name="note">Automatic payment processed successfully</field>
+    </record>
+    
+    <record id="renewal_2" model="subscription.renewal.log">
+        <field name="contract_id" ref="contract_1"/>
+        <field name="renewal_date">2023-03-01</field>
+        <field name="status">success</field>
+        <field name="note">Manual payment processed</field>
+    </record>
+    
+    <record id="renewal_3" model="subscription.renewal.log">
+        <field name="contract_id" ref="contract_2"/>
+        <field name="renewal_date">2023-05-15</field>
+        <field name="status">success</field>
+        <field name="note">Subscription renewed for another term</field>
+    </record>
+    
+    <record id="renewal_4" model="subscription.renewal.log">
+        <field name="contract_id" ref="contract_3"/>
+        <field name="renewal_date">2023-09-10</field>
+        <field name="status">failed</field>
+        <field name="note">Payment method declined</field>
+    </record>
+    
+    <record id="renewal_5" model="subscription.renewal.log">
+        <field name="contract_id" ref="contract_4"/>
+        <field name="renewal_date">2024-04-05</field>
+        <field name="status">success</field>
+        <field name="note">Auto-renewal with updated credit card</field>
+    </record>
+    
+    <record id="renewal_6" model="subscription.renewal.log">
+        <field name="contract_id" ref="contract_5"/>
+        <field name="renewal_date">2023-06-20</field>
+        <field name="status">failed</field>
+        <field name="note">Customer requested cancellation</field>
+    </record>
+    
+    <record id="renewal_7" model="subscription.renewal.log">
+        <field name="contract_id" ref="contract_6"/>
+        <field name="renewal_date">2023-09-01</field>
+        <field name="status">success</field>
+        <field name="note">Upgraded to annual plan</field>
+    </record>
+    
+    <record id="renewal_8" model="subscription.renewal.log">
+        <field name="contract_id" ref="contract_7"/>
+        <field name="renewal_date">2024-07-15</field>
+        <field name="status">success</field>
+        <field name="note">Early renewal with discount</field>
+    </record>
+    
+    <record id="renewal_9" model="subscription.renewal.log">
+        <field name="contract_id" ref="contract_8"/>
+        <field name="renewal_date">2024-08-10</field>
+        <field name="status">success</field>
+        <field name="note">Corporate account renewal</field>
+    </record>
+    
+    <record id="renewal_10" model="subscription.renewal.log">
+        <field name="contract_id" ref="contract_9"/>
+        <field name="renewal_date">2024-03-01</field>
+        <field name="status">failed</field>
+        <field name="note">Team disbanded, no renewal</field>
+    </record>
+    
+    <record id="renewal_11" model="subscription.renewal.log">
+        <field name="contract_id" ref="contract_10"/>
+        <field name="renewal_date">2023-11-05</field>
+        <field name="status">success</field>
+        <field name="note">Student discount applied</field>
+    </record>
+    
+    <record id="renewal_12" model="subscription.renewal.log">
+        <field name="contract_id" ref="contract_11"/>
+        <field name="renewal_date">2024-05-20</field>
+        <field name="status">success</field>
+        <field name="note">Non-profit special rate</field>
+    </record>
+    
+    <record id="renewal_13" model="subscription.renewal.log">
+        <field name="contract_id" ref="contract_12"/>
+        <field name="renewal_date">2024-01-01</field>
+        <field name="status">failed</field>
+        <field name="note">Trial ended, no payment</field>
+    </record>
+    
+    <record id="renewal_14" model="subscription.renewal.log">
+        <field name="contract_id" ref="contract_13"/>
+        <field name="renewal_date">2024-04-15</field>
+        <field name="status">success</field>
+        <field name="note">Custom plan renewal</field>
+    </record>
+    
+    <record id="renewal_15" model="subscription.renewal.log">
+        <field name="contract_id" ref="contract_14"/>
+        <field name="renewal_date">2025-02-10</field>
+        <field name="status">failed</field>
+        <field name="note">Contract cancelled before renewal</field>
+    </record>
+</odoo>

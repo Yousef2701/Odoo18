@@ -1,3 +1,4 @@
 from . import subscription_plan
 from . import plan_feature
-from . import customer_subscription
+from . import subscription_contract
+from . import subscription_renewal_log
