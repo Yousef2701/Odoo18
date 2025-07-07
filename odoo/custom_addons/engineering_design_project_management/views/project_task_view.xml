@@ -18,14 +18,18 @@
         <field name="model">eng.project.task</field>
         <field name="arch" type="xml">
             <form>
-                <group>
-                    <field name="name"/>
-                    <field name="project_id"/>
-                    <field name="assigned_to"/>
-                    <field name="deadline"/>
-                    <field name="state"/>
-                </group>
+                <sheet>
+                    <header>
+                        <field name="state" widget="statusbar" options="{'clickable': 1}" />
+                    </header>
+                    <group>
+                        <field name="name"/>
+                        <field name="project_id"/>
+                        <field name="assigned_to"/>
+                        <field name="deadline"/>
+                    </group>
                     <field name="description"/>
+                </sheet>
             </form>
         </field>
     </record>

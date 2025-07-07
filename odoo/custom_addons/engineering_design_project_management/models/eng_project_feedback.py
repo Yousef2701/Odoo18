@@ -12,6 +12,6 @@ class ProjectFeedback(models.Model):
         ('3', 'Average'),
         ('4', 'Good'),
         ('5', 'Excellent'),
-    ], string="Rating")
+    ], default='Excellent', string="Rating")
     comment = fields.Text(string="Feedback Comment")
     date = fields.Datetime(string="Submitted On", default=fields.Datetime.now)

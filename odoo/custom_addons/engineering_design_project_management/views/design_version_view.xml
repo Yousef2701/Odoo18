@@ -17,16 +17,20 @@
         <field name="model">eng.design.version</field>
         <field name="arch" type="xml">
             <form>
-                <group>
-                    <field name="name"/>
-                    <field name="project_id"/>
-                    <field name="date"/>
-                    <field name="status"/>
-                </group>
-                <group>
-                    <field name="file_ids" widget="many2many_binary"/>
-                    <field name="comment_ids"/>
-                </group>
+                <sheet>
+                    <header>
+                        <field name="status" widget="statusbar" options="{'clickable': 1}" />
+                    </header>
+                    <group>
+                        <field name="name"/>
+                        <field name="project_id"/>
+                        <field name="date"/>
+                    </group>
+                    <group>
+                        <field name="file_ids" widget="many2many_binary"/>
+                        <field name="comment_ids"/>
+                    </group>
+                </sheet>  
             </form>
         </field>
     </record>

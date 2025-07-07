@@ -19,10 +19,12 @@
         <field name="arch" type="xml">
             <form>
                 <sheet>
+                    <header>
+                        <field name="stage" widget="statusbar" options="{'clickable': 1}" />
+                    </header>
                     <group>
                         <field name="name"/>
                         <field name="client_id"/>
-                        <field name="stage"/>
                         <field name="start_date"/>
                         <field name="end_date"/>
                     </group>
