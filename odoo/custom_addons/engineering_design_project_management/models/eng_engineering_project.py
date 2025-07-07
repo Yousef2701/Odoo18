@@ -24,3 +24,32 @@ class EngineeringProject(models.Model):
     start_date = fields.Date(string="Start Date")
     end_date = fields.Date(string="End Date")
     description = fields.Text(string="Internal Notes")
+
+    def action_new(self):
+        for rec in self:
+            rec.stage = 'new'
+
+    def action_analysis(self):
+        for rec in self:
+            rec.stage = 'analysis'
+
+    def action_design(self):
+        for rec in self:
+            rec.stage = 'design'
+
+    def action_review(self):
+        for rec in self:
+            rec.stage = 'review'
+
+    def action_revisions(self):
+        for rec in self:
+            rec.stage = 'revisions'
+
+    def action_approved(self):
+        for rec in self:
+            rec.stage = 'approved'
+
+    def action_delivered(self):
+        for rec in self:
+            rec.stage = 'delivered'
+

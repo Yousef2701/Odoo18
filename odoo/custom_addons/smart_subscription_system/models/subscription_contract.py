@@ -34,3 +34,19 @@ class SubscriptionContract(models.Model):
 
     def cancel_contract(self):
         self.write({'state': 'cancelled'})
+
+    def action_draft(self):
+        for rec in self:
+            rec.state = 'draft'
+
+    def action_active(self):
+        for rec in self:
+            rec.state = 'active'
+
+    def action_expired(self):
+        for rec in self:
+            rec.state = 'expired'
+
+    def action_cancelled(self):
+        for rec in self:
+            rec.state = 'cancelled'

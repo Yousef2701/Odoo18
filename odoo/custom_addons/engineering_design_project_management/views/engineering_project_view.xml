@@ -20,7 +20,14 @@
             <form>
                 <sheet>
                     <header>
-                        <field name="stage" widget="statusbar" options="{'clickable': 1}" />
+                        <button name="action_new" type="object" class="btn-primary" string="Set To New" />
+                        <button name="action_analysis" type="object" class="btn-primary" string="Set To Analysis" />
+                        <button name="action_design" type="object" class="btn-primary" string="Set To Design" />
+                        <button name="action_review" type="object" class="btn-primary" string="Set To Review" />
+                        <button name="action_revisions" type="object" class="btn-primary" string="Set To Revisions" />
+                        <button name="action_approved" type="object" class="btn-primary" string="Set To Approved" />
+                        <button name="action_delivered" type="object" class="btn-primary" string="Set To Delivered" />
+                        <field name="stage" widget="statusbar" />
                     </header>
                     <group>
                         <field name="name"/>

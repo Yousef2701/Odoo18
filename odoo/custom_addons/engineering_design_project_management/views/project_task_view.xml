@@ -20,6 +20,9 @@
             <form>
                 <sheet>
                     <header>
+                        <button name="action_todo" type="object" class="btn-primary" string="Set To To-Do" />
+                        <button name="action_in_progress" type="object" class="btn-primary" string="Set To In-Progress" />
+                        <button name="action_done" type="object" class="btn-primary" string="Set To Done" />
                         <field name="state" widget="statusbar" options="{'clickable': 1}" />
                     </header>
                     <group>

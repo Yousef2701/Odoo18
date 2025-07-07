@@ -19,6 +19,10 @@
             <form>
                 <sheet>
                     <header>
+                        <button name="action_draft" type="object" class="btn-primary" string="Set To Draft" />
+                        <button name="action_submitted" type="object" class="btn-primary" string="Set To Submitted" />
+                        <button name="action_approved" type="object" class="btn-primary" string="Set To Approved" />
+                        <button name="action_revision" type="object" class="btn-primary" string="Set To Revision" />
                         <field name="status" widget="statusbar" options="{'clickable': 1}" />
                     </header>
                     <group>

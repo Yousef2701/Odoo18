@@ -15,3 +15,15 @@ class ProjectTask(models.Model):
         ('in_progress', 'In Progress'),
         ('done', 'Done')
     ], default='todo', string="Status", tracking=True)
+
+    def action_todo(self):
+        for rec in self:
+            rec.state = 'todo'
+
+    def action_in_progress(self):
+        for rec in self:
+            rec.state = 'in_progress'
+
+    def action_done(self):
+        for rec in self:
+            rec.state = 'done'
